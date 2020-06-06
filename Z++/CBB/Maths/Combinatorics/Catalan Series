@@ -1,0 +1,45 @@
+Catalan Series
+____________________
+
+
+Catlan series: 1,1,2,5,14,42,132,..........
+->Combinatorics Questions
+->Recursive Problems
+
+Questions:
+
+1. COunt the number of BST's with N nodes.
+2. Number of Binary trees using n nodes = N! * (2n)C(n+1) ( N! because of different arrangement of nodes )
+3. No of ways you can arrange balance paranthesis.
+
+
+Generate nth term of catalan no.:
+
+1. Direct Formula: (2n)C(n)
+				---------------
+					(n+1)
+
+2. Recursive relation: In BST we can have any node as root node. Let is say ith node is root node.
+	1,2,3,4...,(i),....N
+
+			  i
+			/  \
+		   /	\
+		  /		 \
+		------		------
+	    | i-1 |    | n-i |
+		------		-------
+
+Let F(n) = No. of BSTs we can make using n nodes
+x = F(i-1) = no of left hand subtrees
+y = F(n-i) = no of right hand subtrees
+
+Therefore: F(n) = Any subtree from left * Any subtree from right
+or,
+F(n) = xC1 * yC1 = x*y = F(i-1) * F(N-i)
+F(n) = Summation [ F(i-1) * F(N-i) ]  0<=i<=N
+
+This can be solved using DP also
+
+
+Applications:: https://www.geeksforgeeks.org/applications-of-catalan-numbers/

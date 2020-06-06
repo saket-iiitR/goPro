@@ -1,0 +1,31 @@
+1. 1339/problem/B -> B. Sorted Adjacent Differences
+	sort array.
+	ans[n] = max_of_remaining_array, ans[n-1] = min_of_remaining_array till n/2;
+
+2. 1095/problem/B -> B. Array Stabilization
+	sort array.
+	ans = min( max - 2nd_min , 2nd_max - min) as only one element can be removed {1 4 5 7}
+
+3. problem/1187/C -> C. Vasya And Array
+	2 elements are called sorted iff a[i]-a[i-1] >=0
+	make an temp array having values = -1
+	follow all the conditions where elements are in sorted order
+	automatically 2nd condition is fulfilled 
+	check in the given range where t=0 if it has -1, then it's fine else ans is NO
+	arr[i] = arr[i-1] + temporary array [i]   arr[0] = 0;
+
+4. 1339/problem/C -> C. Powered Addition
+	make a difference array for a[i]<a[i-1]
+	we can add something to a[i] to make it equal to a[i-1]
+	that something is 2^(x-1)
+	something = difference (a[i-1],a[i]) = diff[i] -> must be power of 2
+	calculate log2(diff) + 1;
+	ans-> max_element
+
+5. 1006/problem/C -> C. Three Parts of the Array
+	2 pointer 
+	1st from start 2nd from back
+	add till 1st pointer < 2nd pointer and keep all the equal sum
+	add as per condition: sum1>sum2 then j++ and sum2+=arr[j] where j = n-1
+
+
